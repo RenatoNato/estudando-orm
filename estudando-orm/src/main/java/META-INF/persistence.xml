@@ -7,27 +7,36 @@
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
-
-			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect" 
-				/> -->
+			
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.Oracle12cDialect" />
 			<property name="jakarta.persistence.jdbc.driver"
 				value="oracle.jdbc.OracleDriver" />
 			 <property name="jakarta.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" 
 				/> 
-			<!--<property name="jakarta.persistence.jdbc.url"
-				value="jdbc:oracle:thin:@192.168.15.21:1521:orcl" /> -->
+			
+			<!-- BANCO LOCAL QUE ESTAVA UTILIZANDO ATÉ A LIBERAÇÃO DE ACESSO AO BANCO DA FIAP QUE 
+				 DEMOROU MAIS DE UMA SEMANA... (PUTZ)
+			
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:oracle:thin:@192.168.15.21:1521:orcl" /> 
+				
+			-->
+			
 			<property name="jakarta.persistence.jdbc.user"
 				value="RM343074" />
 			<property name="jakarta.persistence.jdbc.password"
 				value="221086" />
 
 
-			<!-- property name="jakarta.persistence.schema-generation.database.action" 
-				value="drop-and-create" /> <property name="jakarta.persistence.schema-generation.scripts.action" 
-				value="create" /> <property name="hibernate. hbm2ddl.auto" value="update" 
-				/> -->
+			<!-- CRIAR OS OBJETOS E O BANCO DIRETO PELO JPA/HIBERNATE
+			
+			 <property name="jakarta.persistence.schema-generation.database.action" 
+			 	value="drop-and-create" /> 
+			 <property name="jakarta.persistence.schema-generation.scripts.action" 
+				value="create" /> <property name="hibernate. hbm2ddl.auto" value="update" /> 			
+			-->
+			
 		</properties>
 
 	</persistence-unit>
