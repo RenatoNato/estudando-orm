@@ -9,6 +9,8 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "tbl_estabelecimento")
 public class Estabelecimento {
+	//id_estabelecimento, nome_estabelecimento, dh_criacao
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "est_seq")
 	@SequenceGenerator(name = "est_seq", sequenceName = "TB_ESTABELECIMENTO_SEQ", allocationSize = 1)
