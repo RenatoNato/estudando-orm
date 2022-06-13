@@ -16,15 +16,12 @@ public class JPATest {
 			em.getTransaction().begin();
 
 			Estabelecimento novo = new Estabelecimento();
-			novo.setNome("Escola de treinamento tecnológico");
-
-			//TipoEstabelecimento novo2 = new TipoEstabelecimento();
-			//novo2.setNome("Escola Renato Rei");
+			novo.setNome("Escola vai 04");
 
 			em.persist(novo);
-		    //em.persist(novo2);
+
 			em.getTransaction().commit();
-			
+
 		} catch (Exception e) {
 			if (em != null && em.getTransaction().isActive()) {
 				em.getTransaction().rollback();
