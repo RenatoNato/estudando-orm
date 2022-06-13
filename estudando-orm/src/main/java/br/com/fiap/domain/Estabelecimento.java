@@ -7,10 +7,10 @@ import org.hibernate.annotations.CreationTimestamp;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tbl_estabelecimento")
+@Table(name = "estabelecimento")
 public class Estabelecimento {
-	//id_estabelecimento, nome_estabelecimento, dh_criacao
-	
+	// id_estabelecimento, nome_estabelecimento, dh_criacao
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "est_seq")
 	@SequenceGenerator(name = "est_seq", sequenceName = "TB_ESTABELECIMENTO_SEQ", allocationSize = 1)
@@ -24,12 +24,19 @@ public class Estabelecimento {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "dh_criacao")
 	private Calendar dataHoraCriacao;
-	
-	@JoinColumn(name="ID_TIPO_ESTABELECIMENTO")
+
+	@JoinColumn(name = "ID_TIPO_ESTABELECIMENTO")
 	@ManyToOne
 	private TipoEstabelecimento tipo;
 
-	
+	public TipoEstabelecimento getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoEstabelecimento tipo) {
+		this.tipo = tipo;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -56,7 +63,9 @@ public class Estabelecimento {
 
 	@Override
 	public String toString() {
-		return id + " - " + nome + " - " + tipo.getNome();
+		return "ID " + id + " - " + dataHoraCriacao.get(Calendar.DAY_OF_MONTH) + "/"
+				+ dataHoraCriacao.get(Calendar.MONTH) + "/" + dataHoraCriacao.get(Calendar.YEAR) + " - " + nome + " - "
+				+ tipo.getNome();
 	}
 
 }
