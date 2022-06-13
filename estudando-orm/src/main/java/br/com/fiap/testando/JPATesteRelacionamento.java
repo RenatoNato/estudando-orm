@@ -1,6 +1,7 @@
 package br.com.fiap.testando;
 
 import br.com.fiap.domain.Estabelecimento;
+import br.com.fiap.domain.TipoEstabelecimento;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
@@ -14,8 +15,13 @@ public class JPATesteRelacionamento {
 			em = Persistence.createEntityManagerFactory("estudando-orm").createEntityManager();
 			em.getTransaction().begin();
 
-			Estabelecimento recuperado = em.find(Estabelecimento.class, 2);
-			System.out.println(recuperado);
+			
+			TipoEstabelecimento tipo = em.find(TipoEstabelecimento.class, 4);
+			System.out.println(tipo.getEstabelecimentos());
+			
+			//Estabelecimento recuperado = em.find(Estabelecimento.class, 4);
+
+			//System.out.println(recuperado);
 
 		} catch (Exception e) {
 			if (em != null && em.getTransaction().isActive()) {
