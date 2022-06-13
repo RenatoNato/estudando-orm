@@ -14,7 +14,7 @@ public class JPATesteRelacionamento {
 			em = Persistence.createEntityManagerFactory("estudando-orm").createEntityManager();
 			em.getTransaction().begin();
 
-			Estabelecimento recuperado = em.find(Estabelecimento.class, 1);
+			Estabelecimento recuperado = em.find(Estabelecimento.class, 2);
 			System.out.println(recuperado);
 
 		} catch (Exception e) {

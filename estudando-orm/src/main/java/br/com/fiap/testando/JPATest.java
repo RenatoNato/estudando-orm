@@ -16,13 +16,13 @@ public class JPATest {
 			em.getTransaction().begin();
 
 			Estabelecimento novo = new Estabelecimento();
-			novo.setNome("RENATO CÉZAR");
+			novo.setNome("Escola de treinamento tecnológico");
 
-			TipoEstabelecimento novo2 = new TipoEstabelecimento();
-			novo2.setNome("Escola Matutando");
+			//TipoEstabelecimento novo2 = new TipoEstabelecimento();
+			//novo2.setNome("Escola Renato Rei");
 
 			em.persist(novo);
-		    em.persist(novo2);
+		    //em.persist(novo2);
 			em.getTransaction().commit();
 			
 		} catch (Exception e) {
