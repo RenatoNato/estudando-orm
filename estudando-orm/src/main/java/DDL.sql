@@ -150,8 +150,8 @@ ALTER TABLE estabelecimento
 -- CREATE MATERIALIZED VIEW                 0
 -- CREATE MATERIALIZED VIEW LOG             0
 -- CREATE SYNONYM                           0
--- CREATE TABLESPACE                        1
--- CREATE USER                              1
+-- CREATE TABLESPACE                        0
+-- CREATE USER                              0
 -- 
 -- DROP TABLESPACE                          0
 -- DROP DATABASE                            0
