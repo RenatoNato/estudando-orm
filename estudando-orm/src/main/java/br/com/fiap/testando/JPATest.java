@@ -15,8 +15,10 @@ public class JPATest {
 			em = Persistence.createEntityManagerFactory("estudando-orm").createEntityManager();
 			em.getTransaction().begin();
 
+			TipoEstabelecimento tp = new TipoEstabelecimento();
 			Estabelecimento novo = new Estabelecimento();
-			novo.setNome("Escola vai 04");
+			novo.setNome("Escola vai 03");			
+		
 
 			em.persist(novo);
 
